@@ -1,10 +1,7 @@
-import streamlit as st 
-import pandas as  pd
+import streamlit as st
+import pandas as pd
 import matplotlib.pyplot as plt
-import json
-import requests  # pip install requests
-import streamlit as st  # pip install streamlit
-from streamlit_lottie import st_lottie  # pip install streamlit-lottie
+
 def shorten_categories(categories, cutoff):
     categorical_map = {}
     for i in range(len(categories)):
@@ -60,7 +57,7 @@ def show_explore_page():
 
     st.write(
         """
-    ### Stack Overflow Developer Survey 2023-2024
+    ### Stack Overflow Developer Survey 2020
     """
     )
 
@@ -91,14 +88,3 @@ def show_explore_page():
 
     data = df.groupby(["YearsCodePro"])["Salary"].mean().sort_values(ascending=True)
     st.line_chart(data)
-    
-    
-    
-@st.cache
-def load_lottieurl(url: str):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
-lottie_hello = load_lottieurl("https://lottie.host/59ad551e-fae9-407a-854c-ef5777bc4242/y4A4mMMQY1.json")
-st_lottie(lottie_hello, key="my_lottie")

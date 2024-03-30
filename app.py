@@ -32,24 +32,11 @@ st.write("""
 
 page=option_menu (
     menu_title="Main Menu",
-    options=["Predict","Explore"],
-    icons=['gear','rocket'],
+    options=["Home","Predict",],
+    icons=['house','gear'],
     orientation ="horizontal",
 )
-styles={
-    "container":{"padding":"0!important","background-color":"green"},
-    "nav-link":
-        {
-            "font-size":"25px",
-            "text-align":"left",
-            "margin":"0 px",
-            "hover-color":"blue"
-        },
-        "nav-link-selected":{"border-bottom":"3px solid white",'color':'red'},
-        
-}
 
 if page == "Predict":
     show_predict_page()
-if page=="Explore":
-    show_explore_page()
+
