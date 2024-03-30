@@ -2,6 +2,7 @@ import streamlit as st
 import pickle
 import numpy as np
 
+
 def load_model():
    with open('saved_steps.pkl', 'rb') as file:
     data = pickle.load(file)
@@ -15,7 +16,7 @@ def show_predict_page():
     st.title("Software Developer Salary Prediction")
     
     st.write("""We need some information to predict the salary""")
-
+     
 
     countries = (
         "United States",
@@ -54,3 +55,6 @@ def show_predict_page():
 
         salary = regressor_loaded.predict(X)
         st.subheader(f"The estimated salary is ${salary[0]:.2f}")
+    
+    
+   
