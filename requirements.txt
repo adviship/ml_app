@@ -3,3 +3,5 @@ numpy==1.26.4
 pandas==2.2.1
 streamlit==1.32.0
 streamlit_option_menu==0.3.12
+pickel == 2.0.0
+sklearn==0.0
